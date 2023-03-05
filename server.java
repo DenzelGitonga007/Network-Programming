@@ -6,7 +6,11 @@ public class Server {
     public static void main(String[] args) {
         try {
             // Create a server socket to listen for incoming connections
-            ServerSocket serverSocket = new ServerSocket(1234);
+            // ServerSocket serverSocket = new ServerSocket(1234);
+
+            // To allow the server to take requests from another client in another machine
+            ServerSocket serverSocket = new ServerSocket(5000); // 5000 is the port
+
             
             while (true) {
                 // Accept a new client connection
