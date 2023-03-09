@@ -11,25 +11,19 @@ public class Server {
             // To allow the server to take requests from another client in another machine
             ServerSocket serverSocket = new ServerSocket(5000); // 5000 is the port
 
-            
+            // The code for the client
+            // Socket socket = new Socket("server-address", 5000);
+
+            // To accept request from client
             while (true) {
-                // Accept a new client connection
                 Socket clientSocket = serverSocket.accept();
-                
-                // Get input and output streams for the client socket
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                
-                // Receive a message from the client
-                String message = in.readLine();
-                System.out.println("Client says: " + message);
-                
-                // Send a response back to the client
-                out.println("Hello client!");
-                
-                // Close the client socket
-                clientSocket.close();
+                System.out.println("Client connected from " + clientSocket.getInetAddress());
+
+                // Create a new thread to handle the client connection
+                ClientHandler clientHandler = new ClientHandler(clientSocket);
+                clientHandler.start();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
