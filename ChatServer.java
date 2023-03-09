@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ChatServer {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(1234);
-        System.out.println("Chat server started on port 1234");
+        System.out.println("Denzel Chat server started on port 1234");
 
         while (true) {
             Socket clientSocket = serverSocket.accept();
