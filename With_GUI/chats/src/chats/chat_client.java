@@ -180,7 +180,7 @@ public class chat_client extends javax.swing.JFrame {
         });
         
         try{
-            s = new Socket("127.0.0.1",1245); // here the IP address is the local address because i'm running both the server and the client on the same machine...
+            s = new Socket("192.168.137.1",1245); // here the IP address is the local address because i'm running both the server and the client on the same machine...
             din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
             String msgin="";
