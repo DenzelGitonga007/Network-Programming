@@ -136,6 +136,8 @@ public class chat_client extends javax.swing.JFrame {
             msgout = msg_text.getText().trim();
             dout.writeUTF(msgout); // sends the client message to the server...
             
+            msg_area.setText(msg_area.getText().trim()+"\n Client:\t"+msgout); // displays the message... from the Server
+            
         }catch(Exception e){
             // handles the exception or error
         }
