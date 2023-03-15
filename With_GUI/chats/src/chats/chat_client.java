@@ -116,6 +116,8 @@ public class chat_client extends javax.swing.JFrame {
             String msgout = "";
             msgout = msg_text.getText().trim();
             dout.writeUTF(msgout); // sends the client message to the server...
+            // Display the message sent by client
+            msg_area.setText(msg_area.getText().trim()+"\n Me:\t"+msgout); // displays the message... from the Client
             
         }catch(Exception e){
             // handles the exception or error
@@ -125,6 +127,7 @@ public class chat_client extends javax.swing.JFrame {
 
     private void msg_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msg_textActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_msg_textActionPerformed
 
     private void msg_textKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_msg_textKeyPressed
@@ -135,8 +138,8 @@ public class chat_client extends javax.swing.JFrame {
             String msgout = "";
             msgout = msg_text.getText().trim();
             dout.writeUTF(msgout); // sends the client message to the server...
-            
-            msg_area.setText(msg_area.getText().trim()+"\n Client:\t"+msgout); // displays the message... from the Server
+            // Display the message sent by client
+            msg_area.setText(msg_area.getText().trim()+"\n Me:\t"+msgout); // displays the message... from the Client
             
         }catch(Exception e){
             // handles the exception or error
